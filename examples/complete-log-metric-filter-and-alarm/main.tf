@@ -15,6 +15,7 @@ module "log_group" {
 locals {
   metric_transformation_name      = "ErrorCount"
   metric_transformation_namespace = "MyAppNamespace"
+  metric_transformation_unit      = "Count"
 }
 
 module "log_metric_filter" {
@@ -27,6 +28,7 @@ module "log_metric_filter" {
 
   metric_transformation_namespace = local.metric_transformation_namespace
   metric_transformation_name      = local.metric_transformation_name
+  metric_transformation_unit      = local.metric_transformation_unit
 }
 
 module "alarm" {
